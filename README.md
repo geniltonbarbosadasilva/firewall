@@ -1,7 +1,10 @@
-sudo iptables -L -n -v
+## Requisitos:
+ - [NetfilterQueue](https://pypi.org/project/NetfilterQueue/)
+ - [Scapy](https://scapy.net/)
 
-sudo iptables -F OUTPUT
-sudo iptables -F INPUT
+## Execução:
+ 1. Execute esse comando para redireciona os pacotes para o firewall:
 
-sudo iptables -A INPUT -j NFQUEUE --queue-num 1
-sudo iptables -A OUTPUT -j NFQUEUE --queue-num 1
+	```sudo iptables -A INPUT -j NFQUEUE --queue-num 1```
+
+	```sudo iptables -A OUTPUT -j NFQUEUE --queue-num 1```
